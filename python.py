@@ -6,7 +6,7 @@ from google import genai
 from google.genai.errors import APIError
 
 
-import google.generativeai as genai
+#import google.generativeai as genai
 from google.api_core import exceptions
 
 # --- Cấu hình Trang Streamlit ---
