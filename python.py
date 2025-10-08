@@ -51,7 +51,8 @@ def get_ai_summary(data_for_ai, api_key):
     """Gửi dữ liệu đã xử lý đến Gemini API và nhận lại một bài phân tích tổng quan."""
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        # SỬA LỖI: Đổi tên model thành phiên bản ổn định hơn
+        model = genai.GenerativeModel('gemini-1.5-flash')
 
         prompt = f"""
         Bạn là một chuyên gia phân tích tài chính chuyên nghiệp. Dựa trên các chỉ số tài chính sau, hãy đưa ra một nhận xét khách quan, ngắn gọn (khoảng 3-4 đoạn) về tình hình tài chính của doanh nghiệp. Đánh giá tập trung vào tốc độ tăng trưởng, thay đổi cơ cấu tài sản và khả năng thanh toán hiện hành.
@@ -73,7 +74,8 @@ def ask_gemini_chat(question, context_data, api_key):
     """Gửi câu hỏi của người dùng và dữ liệu ngữ cảnh đến Gemini để nhận câu trả lời."""
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        # SỬA LỖI: Đổi tên model thành phiên bản ổn định hơn
+        model = genai.GenerativeModel('gemini-1.5-flash')
 
         prompt = f"""
         Bạn là một trợ lý AI chuyên về phân tích tài chính. Dựa vào dữ liệu báo cáo tài chính được cung cấp dưới đây, hãy trả lời câu hỏi của người dùng một cách chính xác và súc tích.
